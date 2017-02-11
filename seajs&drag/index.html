@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style>
+		*{
+			margin: 0;
+			padding: 0;
+		}
+		.clearfix:after{
+			content:"";
+			display: block;
+			height: 0;
+			line-height: 0;
+			visibility: hidden;
+			clear: both;
+		}
+		.clear{
+			*zoom:1;
+		}
+		.fl{
+			float: left;
+		}
+		.fr{
+			float: right;
+		}
+		.header{
+			height: 50px;
+			background: pink;
+		}
+		.content{
+			width: 1000px;
+			margin:0 auto;
+		}
+		.left,.center,.right{
+			width: 320px;
+			height: 300px;
+			box-sizing:border-box ;
+			border: 1px solid #ccc;
+		}
+		.center{
+			margin-left:20px;
+			margin-right:20px;
+		}
+		.footer{
+			height: 60px;
+			background:yellow;
+		}
+		#box1,#box2 {
+			width: 100px;
+			height: 100px;
+			background-color: lime;
+			position: absolute;
+		}
+		#box2 {
+			background-color: paleturquoise;
+		}
+		#drag {
+			position: relative;
+		}
+		#btn,
+		#operator {
+			margin-left: 120px;
+			height: 35px;
+			width: 40px;
+		}
+		input[type="text"] {
+			height: 30px;
+			width: 170px;
+			display: block;
+			margin: 10px 0;
+		}
+
+		#hd span {
+			display: inline-block;
+			width: 90px;
+			height: 50px;
+			text-align: center;
+			border: 1px solid #999;
+			line-height: 50px;
+			background-color: palegreen;
+			font: 16px 'microsoft yahei';
+		}
+		#bd ul li {
+			list-style: none;
+			display: block;
+			width: 100%;
+			height: 230px;
+			text-align: center;
+			line-height: 100px;
+			display: none;
+			background-color: palegreen;
+		}
+		#hd .active,
+		#bd .active {
+			display: inline-block;
+			font-size: 30px;
+			background-color: #59cc32;
+		}
+	</style>
+</head>
+<body>
+	<div class="header">header头部区域</div>
+	<div class="content clearfix">
+		<div class="left fl">
+			<input type="text" id="a">
+			<select  id="operator">
+				<option value="0">+</option>
+				<option value="1">-</option>
+				<option value="2">*</option>
+				<option value="3">/</option>
+			</select>
+			<input type="text" id="b">
+			<input type="button" id="btn" value=" = ">
+			<input type="text" id="result">
+		</div>
+		<div class="center fl">
+			<div id="hd">
+				<span class="active">新闻</span>
+				<span>体育</span>
+				<span>娱乐</span>
+			</div>
+			<div id="bd">
+				<ul id="body">
+					<li class="active">我是新闻模块</li>
+					<li>我是体育模块</li>
+					<li>我是娱乐模块</li>
+				</ul>
+			</div>
+		</div>
+		<div class="right fr" id="drag"><drag>
+			<div id="box1"></div>
+			<div id="box2"></div>
+		</drag></div>
+	</div>
+	<div class="footer">footer底部</div>
+</body>
+<script src="js/sea.js"></script>
+<script>
+	seajs.use('main');
+</script>
+</html>
